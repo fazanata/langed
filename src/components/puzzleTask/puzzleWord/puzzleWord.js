@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+
+import VarContext from "../../../context";
 import './puzzleWord.css';
 
-
 function PuzzleWord({ word, word_rus }) {
+
+    const { varUser, setVarUser } = useContext(VarContext);
+    let count = varUser['count']
+    console.log('word=', word,' ',word_rus)
+    useEffect(() => {
+        
+      }, []);
 
     var arrWord = word.split('');
 
@@ -28,6 +36,7 @@ function PuzzleWord({ word, word_rus }) {
     const [cardList, setCardList] = useState(cList)
     const [currentCard, setCurrentCard] = useState(null)
     const [wordDone, setWordDone] = useState(false)
+    const [promtVisible,setPromtVisible] = useState(false)
 
     function dragStartHandler(e, card) {
         setCurrentCard(card)
@@ -45,7 +54,11 @@ function PuzzleWord({ word, word_rus }) {
         })
 
         let str = w.join("")
-        if (str === word) setWordDone(true)
+        if (str === word) {
+            setWordDone(true)
+            setVarUser((prev) => ({ ...prev, ["count"]: count+1 }));
+            console.log('word ppp=', word)
+        }
 
     }
 
@@ -78,11 +91,27 @@ function PuzzleWord({ word, word_rus }) {
         }
     }
 
+    const ShowPromt = () => {
+        if (varUser['count']>0) {
+            setPromtVisible(!promtVisible);
+            setVarUser((prev) => ({ ...prev, ["count"]: count-1 }));
+        }
+        
+
+    }
+
     return (
         <div className={` ${!wordDone ? 'main' : 'mainDone'}`}>
+            
             <div className={` ${!wordDone ? 'word' : 'wordDone'}`}>
-                {!wordDone ? `Собери слово "${word_rus}"` : "Слово собрано! Молодец!"}
+                {!wordDone 
+                ? 
+                `Собери слово "${word_rus}"`
+                : 
+                "Слово собрано! Молодец!"
+                }
             </div>
+            <div class="btn btn-outline-success" type="submit" onClick={() => ShowPromt() }>{promtVisible ? word : "Подсказка (-1 монета)" }</div>
             {
                 cardList.sort(sortCards).map(card =>
                     <div

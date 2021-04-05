@@ -1,7 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
+import VarContext from '../../context'
+import coins from '../../assets/coins.png'
 
 function NavBar() {
+    const { varUser, setVarUser } = useContext(VarContext)
+
+    let user = varUser['user']
+    let count = varUser['count']
+    let lesson = varUser['lesson']
+    let name_lesson = varUser['name_lesson']
 
     return (
         <>
@@ -17,22 +25,22 @@ function NavBar() {
                             <li class="nav-item">
                                 <Link to="/puzzleTask" class="nav-link active" aria-current="page">Собери слова</Link>
                             </li>
+
+
                             <li class="nav-item">
-                                <Link to="/findWordImage" class="nav-link">Найди картинки</Link>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-          </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                                
+                                    <Link to="/findWordImage" class="nav-link">Найди картинки</Link>
+                                  
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+                                
+                                <div class="nav-link">{user}, ваши очки: { count }<img src={coins} height="30px" />   </div>
+                              
+                            </li>
+                            <li class="nav-item">
+                                
+                                <div class="nav-link"> Урок:<b> {name_lesson} - {lesson} </b></div>
+                              
                             </li>
                         </ul>
                         <form class="d-flex">

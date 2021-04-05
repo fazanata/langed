@@ -23,6 +23,8 @@ function Lesson(props) {
             console.log("data=", result.data.idl)
 
             setVarUser(prev => ({...prev, ['lesson']: result.data.idl}))
+            setVarUser(prev => ({...prev, ['name_lesson']: result.data.name_lesson}))
+            
             setLesson(result.data)
 
         }
