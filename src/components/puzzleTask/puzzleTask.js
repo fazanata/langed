@@ -30,17 +30,35 @@ function PuzzleTask() {
       return `lesson/listWords.php?idl=${les}`;
     }
 
+    const fetchData = async () => {
+      //setLoading(true);
+      await API.get(getFetchUrl()).then((response)=>{
+        //setWords(response.data.map((s) => s))
+        
+        console.log('res=', response.data)
+        setWords(response.data)
+        console.log('words=', words)
+        setShWords(shuffle(words));
+        //setLoading(false);
+      }).catch((e)=>{
+       /* HANDLE THE ERROR (e) */
+      });
+  }
+  fetchData();
 
+/*
     async function fetchData() {
-      const result = await API.get(getFetchUrl());
-          setWords(result.data.map((s) => s));
-          //setShWords(shuffle(words));
-          console.log('res w=', words)
+      let result = await API.get(getFetchUrl());
+          result = await result.data
+          //setWords(result.data.map((s) => s));
+          setWords(result.data)
+          //
+          //console.log('res w=', words)
   
     }
 
       fetchData();
-
+      */
   }, [les]);
 
   if(words === null) {

@@ -22,7 +22,7 @@ function App() {
       setVarUser((prev) => ({ ...prev, ["lesson"]: result.data.idl }));
       setVarUser((prev) => ({ ...prev, ["name_lesson"]: result.data.name_lesson }));
 
-      console.log('name_lesson=', varUser['name_lesson'])
+      //console.log('name_lesson=', varUser['name_lesson'])
     }
 
     fetchData()

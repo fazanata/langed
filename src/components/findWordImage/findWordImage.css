@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
 .wordEngl {
   width: 100px;
   height: 30px;
@@ -16,6 +14,46 @@
   align-items: center;
   font: 14px bold;
   background-color: lightblue;
+  margin: 20px;
+  cursor: grab;
+}
+
+.imageAnswer {
+  font: 24px bold;
+  color: rgb(102, 102, 245);
+  background-color:cornsilk
+}
+
+.imageElement {
+  text-align: center
+} 
+
+.task {
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+.taskDone {
+  color: brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+.showTip {
+  position: fixed;
+  right: 100px;
+  top: 100px;
+  width: 200px;
+  height: 50px;
+  border-radius: 12px;
+  font: 20px bold;
+  color: blanchedalmond;
+  text-align: center;
   margin: 20px;
   cursor: grab;
 }

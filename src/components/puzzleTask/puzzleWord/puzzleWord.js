@@ -7,7 +7,6 @@ function PuzzleWord({ word, word_rus }) {
 
     const { varUser, setVarUser } = useContext(VarContext);
     let count = varUser['count']
-    console.log('word=', word,' ',word_rus)
     useEffect(() => {
         
       }, []);
@@ -57,7 +56,7 @@ function PuzzleWord({ word, word_rus }) {
         if (str === word) {
             setWordDone(true)
             setVarUser((prev) => ({ ...prev, ["count"]: count+1 }));
-            console.log('word ppp=', word)
+            //console.log('word ppp=', word)
         }
 
     }
