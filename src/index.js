@@ -9,6 +9,7 @@ import VarContext from './context'
 function Main() {
   const [varUser, setVarUser] = useState({
     section: null, 
+    count: 10,
     lesson: null, 
     id_user: null})
     

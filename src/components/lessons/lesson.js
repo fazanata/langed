@@ -43,9 +43,9 @@ function Lesson(props) {
                     <div>
                         <img src={les.img_lesson} class="img-fluid" alt="oops" />
                     </div>
-                    <div>
-                        {les.descr_lesson}
-                    </div>
+
+                    <div dangerouslySetInnerHTML={{__html: les.descr_lesson}}/>
+
                 </div>
             }
 

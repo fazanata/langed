@@ -69,9 +69,9 @@ function PuzzleTask() {
 
   return (
     <>
-      <div className="mainTask">Собери слова:</div>
-      {words && words.map((word) => (
-        <PuzzleWord word={word.word_eng.trim()} word_rus={word.word_rus} />
+      <div className="mainTask">Собери слова! Получи по 3 очка за каждое слово и 10 очков за всё задание!<font size="-4"color="red">Посказка забирает 1 очко!</font></div>
+      {words && words.map((word, id) => (
+        <PuzzleWord key={id} word={word.word_eng.trim()} word_rus={word.word_rus} />
       ))}
     </>
   );
@@ -79,4 +79,4 @@ function PuzzleTask() {
 
 
 
-export default PuzzleTask;
+export default React.memo(PuzzleTask);

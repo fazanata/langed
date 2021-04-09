@@ -1,6 +1,7 @@
 .mainTask {
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    font-size: 48px;
+    font-size: 40px;
   }

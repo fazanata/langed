@@ -44,7 +44,7 @@
   font-size: 48px;
 }
 
-.showTip {
+.showTipGreen {
   position: fixed;
   right: 100px;
   top: 100px;
@@ -52,6 +52,22 @@
   height: 50px;
   border-radius: 12px;
   font: 20px bold;
+  background-color: green;
+  color: blanchedalmond;
+  text-align: center;
+  margin: 20px;
+  cursor: grab;
+}
+
+.showTipRed {
+  position: fixed;
+  right: 100px;
+  top: 100px;
+  width: 200px;
+  height: 50px;
+  border-radius: 12px;
+  font: 20px bold;
+  background-color: red;
   color: blanchedalmond;
   text-align: center;
   margin: 20px;

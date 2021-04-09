@@ -12,9 +12,11 @@ function ImagesTask({ words }) {
   const [cardsVar, setcardsVar] = useState(null);
 
   const [taskDone, setTaskDone] = useState(false);
+
 //для вывода сообщений по очкам
   const [showInfo, setShowInfo] = useState(false);
   const [TextInfo, setTextInfo] = useState("")
+  const [infoColor, setInfoColor] = useState("Green")
 
   useEffect(() => {
     function shuffle(arr) {
@@ -29,7 +31,6 @@ function ImagesTask({ words }) {
     }
 
     let shWords = shuffle(words);
-    console.log("shWords=", shWords);
     let wList = shWords.map((c, idx) => {
       return { id: idx, eng: c.word_eng, img: c.img_word, answer: "" };
     });
@@ -38,7 +39,6 @@ function ImagesTask({ words }) {
     });
     setcardsVar(cardsVar);
     setImgList(wList);
-    console.log("wlist=", wList);
   }, []);
 
   function dragStartHandler(e, card) {
@@ -74,7 +74,6 @@ function ImagesTask({ words }) {
     e.preventDefault();
 
     e.target.style.background = "lightblue";
-    console.log("тащим", card.eng);
   }
 
   function dropHandlerImage(e, image) {
@@ -83,36 +82,44 @@ function ImagesTask({ words }) {
     if (currentCard.eng === image.eng) {
       setVarUser((prev) => ({ ...prev, ["count"]: count + 1 }));
       setTextInfo(`Правильно! +1 очко! У вас ${count+1} очков`)
+      setInfoColor("Green")
 
       let newImages = imgList.map((c) => {
         if (c.eng === image.eng) c.answer = image.eng;
         return c;
       });
-      console.log(newImages);
       setImgList(newImages);
-      setcardsVar(cardsVar.filter((item) => !(item.eng === image.eng)));
-      if (cardsVar.length === 0) setTaskDone(true);
-      //e.target.style.background = "lightblue";
+      let cv = cardsVar.filter((item) => !(item.eng === image.eng))
+      setcardsVar(cv);
+      if (cv.length === 0) {
+          setTaskDone(true);
+          setVarUser((prev) => ({ ...prev, ["count"]: count + 4 })); // почемуто не обновляется счетчик, поэтому +4
+      }
+
     }
     else {
         if ( count >0 ) setVarUser((prev) => ({ ...prev, ["count"]: count - 1 }));
+
+        setInfoColor("Red")
+        
         setTextInfo(`Неправильно! -1 очко! У вас ${count-1} очков`)
     }
     let done = true;
     setShowInfo(true);
+    console.log("infocolor=", infoColor)
     setTimeout(() => setShowInfo(false), 3000)
   }
 
   return (
     <div>
         {showInfo &&
-                <div className="showTip" background-color="green">{TextInfo} </div>
+                <div className={"showTip" + infoColor} background="green">{TextInfo} </div>
         }
         
       <div className={` ${!taskDone ? "task" : "taskDone"}`}>
         {!taskDone
           ? `Найди слова к картинкам:`
-          : "Ты справился с заданием! Молодец!"}
+          : "Ты справился с заданием! + 3 очка! Молодец!"}
       </div>
       <div class="container">
         <div class="row row-cols-5" draggable={false}>

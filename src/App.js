@@ -10,7 +10,7 @@ function App() {
   const { varUser, setVarUser } = useContext(VarContext);
   useEffect(() => {
     //устанавливаем данные пользователя(или загружаем из бд данные текущего пользователя)
-    setVarUser((prev) => ({ ...prev, ["count"]: 0 }));
+    setVarUser((prev) => ({ ...prev, ["count"]: 10 }));
     setVarUser((prev) => ({ ...prev, ["user"]: "User" }));
     setVarUser((prev) => ({ ...prev, ["role"]: "admin" }));
     //берем первый урок в списке для инициализации

@@ -10,7 +10,6 @@ import ImagesTask from "./ImagesTask"
 function FindWordImage() {
   const { varUser, setVarUser } = useContext(VarContext);
   let les = varUser["lesson"];
-  console.log("lesson on = ", les);
 
   const [words, setWords] = useState([]);
   
@@ -27,7 +26,6 @@ function FindWordImage() {
       //setLoading(true);
       await API.get(getFetchUrl())
         .then((response) => {
-          console.log('res =', response.data)
           setWords(response.data)
         })
         .catch((e) => {
@@ -35,14 +33,6 @@ function FindWordImage() {
         });
     };
     fetchData();
-    console.log('words =', words)
-
-
-    console.log("len=", words.length);
-
-    //мешаем карточки
-
-
 
   }, [les]);
 
