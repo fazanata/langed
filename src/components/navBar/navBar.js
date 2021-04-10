@@ -28,7 +28,7 @@ function NavBar() {
 
                             <li class="nav-item">
                                 
-                                    <Link to="/findWordImage" class="nav-link">Найди картинки</Link>
+                                    <Link to="/findWordImage" class="nav-link active" >Найди картинки</Link>
                                   
                             </li>
                             <li class="nav-item">
@@ -39,6 +39,11 @@ function NavBar() {
                             <li class="nav-item">
                                 
                                 <div class="nav-link">{user}, ваши очки: <b><font size="+1" color="pink">{ count }</font></b><img src={coins} height="30px" />   </div>
+                              
+                            </li>
+                            <li class="nav-item">
+                                
+                                <div class="nav-link"> <Link to="/auth/signup" class="nav-link">Зарегистрироваться</Link>  </div>
                               
                             </li>
                             

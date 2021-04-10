@@ -43,7 +43,7 @@ function Menu() {
                 <ul>
                     {sections && sections.map(item => (
                         <li key={item.ids}>
-                            <Link to={`/section/${item.ids}`} href={item.ids}>{item.name_section}</Link>
+                            <Link to={`/section/${item.ids}`} href={item.ids}>{item.name_section} ({item.count})</Link>
                         </li>
                     ))}
                 </ul>
