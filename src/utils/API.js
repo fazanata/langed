@@ -1,6 +1,6 @@
 import axios from "axios"
 
 export default axios.create({
-    baseURL: "http://test.ce74911.tmweb.ru/api/",
+    baseURL: process.env.REACT_APP_BASE_URL,
     responseType: "json"
 });
