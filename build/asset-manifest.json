@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/langed/static/css/main.de5e4d58.chunk.css",
+    "main.js": "/langed/static/js/main.b7c073db.chunk.js",
+    "main.js.map": "/langed/static/js/main.b7c073db.chunk.js.map",
+    "runtime-main.js": "/langed/static/js/runtime-main.12955a0a.js",
+    "runtime-main.js.map": "/langed/static/js/runtime-main.12955a0a.js.map",
+    "static/js/2.af20dcb1.chunk.js": "/langed/static/js/2.af20dcb1.chunk.js",
+    "static/js/2.af20dcb1.chunk.js.map": "/langed/static/js/2.af20dcb1.chunk.js.map",
+    "static/js/3.a5625280.chunk.js": "/langed/static/js/3.a5625280.chunk.js",
+    "static/js/3.a5625280.chunk.js.map": "/langed/static/js/3.a5625280.chunk.js.map",
+    "index.html": "/langed/index.html",
+    "static/css/main.de5e4d58.chunk.css.map": "/langed/static/css/main.de5e4d58.chunk.css.map",
+    "static/js/2.af20dcb1.chunk.js.LICENSE.txt": "/langed/static/js/2.af20dcb1.chunk.js.LICENSE.txt",
+    "static/media/coins.76056e11.png": "/langed/static/media/coins.76056e11.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.12955a0a.js",
+    "static/js/2.af20dcb1.chunk.js",
+    "static/css/main.de5e4d58.chunk.css",
+    "static/js/main.b7c073db.chunk.js"
+  ]
+}
