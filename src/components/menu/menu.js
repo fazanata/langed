@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import API from '../../utils/API'
 import {Link} from 'react-router-dom'
+import s from './menu.module.scss'
 
 
 function Menu() {
@@ -43,7 +44,9 @@ function Menu() {
                 <ul>
                     {sections && sections.map(item => (
                         <li key={item.ids}>
-                            <Link to={`/section/${item.ids}`} href={item.ids}>{item.name_section} ({item.count})</Link>
+                            
+                            <Link to={`/section/${item.ids}`} href={item.ids}><div className={s.hoverItem}>{item.name_section} ({item.count})</div></Link>
+                        
                         </li>
                     ))}
                 </ul>

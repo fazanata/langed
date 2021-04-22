@@ -1,0 +1,30 @@
+li {
+    list-style-type: none;
+    /* Убираем маркеры */
+  }
+  
+  ul {
+    margin-left: 10px;
+    /* Отступ слева в браузере IE и Opera */
+    padding-left: 0;
+    /* Отступ слева в браузере Firefox, Safari, Chrome */
+  }
+
+  .alink { 
+    background-color: #6495ed;
+    color: rgb(15, 14, 10);
+   } 
+   a {
+    text-decoration: none; 
+   }
+
+   .hoverItem {
+    background-color: #cfd3fa;
+   }
+   
+   .hoverItem:hover {
+    background-color:#aab2f6;
+   }
+   .hoverItem:active {
+    background-color:rgb(247, 218, 194);
+   }
